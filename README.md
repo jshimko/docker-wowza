@@ -1,12 +1,14 @@
-# Introduction
 
-Dockerfile to build a [Wowza Streaming Engine](http://www.wowza.com/products/streaming-engine) server.
+
+# docker-wowza 
+
+A Dockerfile to build a [Wowza Streaming Engine](http://www.wowza.com/products/streaming-engine) server.
 
 **NOTE**: By using this image you are agreeing to comply with the [Wowza EULA](http://www.wowza.com/resources/WowzaStreamingEngine-4.0.0_LicenseAgreement.pdf)
 
 Current Version: **4.1.2**
 
-# Installation
+## Installation
 
 ```bash
 git clone https://github.com/jshimko/docker-wowza.git
@@ -14,7 +16,7 @@ cd docker-wowza
 docker build --tag="$USER/wowza:latest" .
 ```
 
-# Usage
+## Usage
 
 ```bash
 docker run --name='wowza' -d \
@@ -30,7 +32,7 @@ Go to `http://DOCKER-HOST:8088` and login using the default username and passwor
 
 Refer to the wowza [quickstart guide](http://www.wowza.com/forums/content.php?3-quick-start-guide) for wowza configuration instructions.
 
-# Volumes
+## Volumes
 
 The Wowza image is configured to save all configurations at `/data`. As such we should mount a volume at `/data`.
 
@@ -44,13 +46,13 @@ docker run --name='wowza' -d \
 
 Upon the first run the image will copy all configurations to this location so you can persist configurations across container lifetimes.
 
-# Shell
+## Shell
 
 ```bash
 docker exec -it wowza bash
 ```
 
-# Upgrading
+## Upgrading
 
 To upgrade the image, you need to rebuild the image from the latest source and do the following.
 
@@ -67,6 +69,6 @@ docker rm wowza
 docker run --name=wowza -d [OPTIONS] $USER/wowza:latest
 ```
 
-# References
+## References
 
   * http://www.wowza.com/products/streaming-engine
