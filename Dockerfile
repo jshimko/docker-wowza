@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Jeremy Shimko <jeremy.shimko@gmail.com>
 
 RUN apt-get update \
- && apt-get install -y supervisor logrotate openjdk-7-jre \
+ && apt-get install -y wget supervisor logrotate openjdk-7-jre \
  && rm -rf /var/lib/apt/lists/*
 
 COPY assets/install /app/install
